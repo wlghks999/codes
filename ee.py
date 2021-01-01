@@ -93,13 +93,18 @@ class graph:
         return self.create_oval(x-r, y-r, x+r, y+r, **kwargs)
     Canvas.create_circle = _create_circle
 
-
+#그래프 생성
 tk.title("Graph")
 tk.resizable(0,0)
 tk.wm_attributes("-topmost",1)
-
 graph=graph(color=color)
-graph.draw(dim=1,a=4,b=1,c=0,isequation=True)
+
+a=int(input("ax+b=c 꼴에서 a 입력"))
+b=int(input("ax+b=c 꼴에서 b 입력"))
+c=int(input("ax+b=c 꼴에서 c 입력"))
+graph.draw(dim=1,a=a,b=b,c=c,isequation=True)
 quit_button=Button(tk, text="종료", command=tk.destroy).pack()
+
+
 tk.mainloop()
 
