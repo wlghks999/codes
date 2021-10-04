@@ -17,8 +17,8 @@ lr=input("learning rate: ")
 
 print(gradient_w,gradient_b)
 for i in range(n):
-    wvar=Add(sympify(wvar),-Mul(Rational(1,lr),gradient_w.subs({w:wvar,b:bvar})))
-    bvar=Add(sympify(bvar),-Mul(Rational(1,lr),gradient_b.subs({w:wvar,b:bvar})))
+    wvar=Add(sympify(wvar),-Mul(Sympify(lr),gradient_w.subs({w:wvar,b:bvar})))
+    bvar=Add(sympify(bvar),-Mul(Sympify(lr),gradient_b.subs({w:wvar,b:bvar})))
     if(i%100==0):
         print(i)
     
